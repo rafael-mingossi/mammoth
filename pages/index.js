@@ -16,7 +16,7 @@ export default function Home({ results }) {
       </Head>
 
       <Header />
-      <Search placeholder={'Enter a Film Name'} data={results} />
+      <Search placeholder={'Enter a Film Title...'} data={results} />
       <List results={results} />
     </div>
   );

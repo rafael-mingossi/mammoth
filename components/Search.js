@@ -29,7 +29,7 @@ function Search({ placeholder, data }) {
   };
 
   return (
-    <div className={styles.search}>
+    <div className={styles.searchContainer}>
       <div className={styles.searchInputs}>
         <input
           type="text"
@@ -51,9 +51,13 @@ function Search({ placeholder, data }) {
       </div>
       {filteredData != 0 && (
         <div className={styles.dataResult}>
-          {filteredData.map((value, key) => {
+          {filteredData.map((value) => {
             return (
-              <a className={styles.dataItem} href={value.properties.url}>
+              <a
+                key={value._id}
+                className={styles.dataItem}
+                href={value.properties.url}
+              >
                 <p>{value.properties.title}</p>
               </a>
             );

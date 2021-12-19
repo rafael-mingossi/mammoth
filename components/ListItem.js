@@ -3,23 +3,23 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function ListItem(props) {
-  //console.log(result);
-  const title = props.result.title;
+  const { title } = props.result;
+  const myTitle = title || props.result;
+
   return (
-    <div className={styles.listItem}>
-      <h2>{title}</h2>
+    <a className={styles.listItem} href={props.href}>
+      <h2>{myTitle}</h2>
       <div className={styles.favIcon}>
-        {!props.handleFavouriteExists(title) && (
-          <FavoriteBorderIcon onClick={() => props.handleFavourite(title)} />
-        )}
-        {props.handleFavouriteExists(title) && (
+        {!props.handleFavouriteExists(myTitle) ? (
+          <FavoriteBorderIcon onClick={() => props.handleFavourite(myTitle)} />
+        ) : (
           <FavoriteIcon
-            onClick={() => props.handleRemoveFavourite(title)}
+            onClick={() => props.handleRemoveFavourite(myTitle)}
             className={styles.favIconColor}
           />
         )}
       </div>
-    </div>
+    </a>
   );
 }
 

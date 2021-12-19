@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import ListItem from './ListItem';
-import ListItemFavourite from './ListItemFavourite';
-
 import styles from '../styles/Home.module.scss';
 
 const List = ({ results }) => {
   const [favourites, setFavourites] = useState([]);
 
   const addFavourite = (movie) => {
-    const newFavouriteList = [...favourites, movie];
+    const newFavouriteList =
+      favourites?.length > 0 ? [...favourites, movie] : [movie];
     setFavourites(newFavouriteList);
     saveLocalStorage(newFavouriteList);
   };
@@ -20,10 +19,7 @@ const List = ({ results }) => {
   };
 
   const exists = (fav) => {
-    if (favourites.includes(fav)) {
-      return true;
-    }
-    return false;
+    return favourites?.includes(fav);
   };
 
   const saveLocalStorage = (movie) => {
@@ -37,21 +33,34 @@ const List = ({ results }) => {
     setFavourites(moviesLocalStorage);
   }, []);
 
+  useEffect(() => {
+    if (favourites) console.log(favourites);
+  }, [favourites]);
+
   return (
     <div className={styles.movieList}>
-      {favourites.length != 0 &&
-        favourites.map((favs) => (
-          <ListItemFavourite favourites={favs} key={favs} />
-        ))}
-      {results.map((result) => (
+      {favourites?.map((favs) => (
         <ListItem
-          key={result._id}
-          result={result.properties}
+          result={favs}
+          key={favs}
           handleFavourite={addFavourite}
           handleRemoveFavourite={removeFavourite}
           handleFavouriteExists={exists}
         />
       ))}
+      {results?.map(
+        (item) =>
+          !favourites.includes(item.properties.title) && (
+            <ListItem
+              href={`movie/${item.uid}`}
+              key={item._id}
+              result={item.properties}
+              handleFavourite={addFavourite}
+              handleRemoveFavourite={removeFavourite}
+              handleFavouriteExists={exists}
+            />
+          )
+      )}
     </div>
   );
 };
