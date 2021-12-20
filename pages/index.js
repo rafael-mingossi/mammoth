@@ -5,8 +5,8 @@ import Header from '../components/Header';
 import Search from '../components/Search';
 import List from '../components/List';
 
-export default function Home({ results }) {
-  //console.log(results);
+export default function Home({ titles }) {
+  //console.log(titles);
   return (
     <div className={styles.main}>
       <Head>
@@ -16,21 +16,20 @@ export default function Home({ results }) {
       </Head>
 
       <Header />
-      <Search placeholder={'Enter a Film Title...'} data={results} />
-      <List results={results} />
+      <Search placeholder={'Enter a Film Title...'} data={titles} />
+      <List results={titles} />
     </div>
   );
 }
 
-export async function getServerSideProps() {
-  const request = await fetch('https://www.swapi.tech/api/films')
-    .then((res) => res.json())
-    .catch((err) => console.error(err));
+// This function gets called at build time
+export async function getStaticProps() {
+  const res = await fetch('https://www.swapi.tech/api/films');
+  const titles = await res.json();
 
-  //console.log(request.result);
   return {
     props: {
-      results: request.result,
+      titles,
     },
   };
 }

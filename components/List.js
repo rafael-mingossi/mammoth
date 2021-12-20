@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.scss';
 
 const List = ({ results }) => {
   const [favourites, setFavourites] = useState([]);
+  const res = results.result;
 
   const addFavourite = (movie) => {
     const newFavouriteList =
@@ -33,9 +34,9 @@ const List = ({ results }) => {
     setFavourites(moviesLocalStorage);
   }, []);
 
-  useEffect(() => {
-    if (favourites) console.log(favourites);
-  }, [favourites]);
+  // useEffect(() => {
+  //   if (favourites) console.log(favourites);
+  // }, [favourites]);
 
   return (
     <div className={styles.movieList}>
@@ -48,7 +49,7 @@ const List = ({ results }) => {
           handleFavouriteExists={exists}
         />
       ))}
-      {results?.map(
+      {res?.map(
         (item) =>
           !favourites.includes(item.properties.title) && (
             <ListItem

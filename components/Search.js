@@ -7,10 +7,12 @@ function Search({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
   const [enteredValue, setEnteredValue] = useState('');
 
+  const res = data.result;
+
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setEnteredValue(searchWord);
-    const newFilter = data.filter((value) => {
+    const newFilter = res.filter((value) => {
       return value.properties.title
         .toLowerCase()
         .includes(searchWord.toLowerCase());
@@ -56,7 +58,7 @@ function Search({ placeholder, data }) {
               <a
                 key={value._id}
                 className={styles.dataItem}
-                href={value.properties.url}
+                href={`movie/${value.uid}`}
               >
                 <p>{value.properties.title}</p>
               </a>

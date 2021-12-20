@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.scss';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import Link from 'next/link';
 
 function ListItem(props) {
   const { title } = props.result;
