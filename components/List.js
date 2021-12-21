@@ -34,10 +34,6 @@ const List = ({ results }) => {
     setFavourites(moviesLocalStorage);
   }, []);
 
-  // useEffect(() => {
-  //   if (favourites) console.log(favourites);
-  // }, [favourites]);
-
   return (
     <div className={styles.movieList}>
       {favourites?.map((favs) => (
