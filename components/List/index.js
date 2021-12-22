@@ -35,18 +35,19 @@ const List = ({ results }) => {
   }, []);
 
   const validateTitle = (favs) => {
-    if (favs == 1) {
-      return 'A New Hope';
-    } else if (favs == 2) {
-      return 'The Empire Strikes Back';
-    } else if (favs == 3) {
-      return 'Return of the Jedi';
-    } else if (favs == 4) {
-      return 'The Phantom Menace';
-    } else if (favs == 5) {
-      return 'Attack of the Clones';
-    } else {
-      return 'Revenge of the Sith';
+    switch (favs) {
+      case 1:
+        return 'A New Hope';
+      case 2:
+        return 'The Empire Strikes Back';
+      case 3:
+        return 'Return of the Jedi';
+      case 4:
+        return 'The Phantom Menace';
+      case 5:
+        return 'Attack of the Clones';
+      default:
+        return 'Revenge of the Sith';
     }
   };
 

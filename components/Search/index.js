@@ -51,7 +51,7 @@ function Search({ placeholder, data }) {
           )}
         </div>
       </div>
-      {filteredData != 0 && (
+      {filteredData.length !== 0 && (
         <div className={styles.dataResult}>
           {filteredData.map((value) => {
             return (

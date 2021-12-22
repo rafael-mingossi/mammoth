@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
+import styles from './styles.module.scss';
 
 import Header from '../components/Header';
 import Search from '../components/Search';
 import List from '../components/List';
 
 export default function Home({ titles }) {
-  //console.log(titles);
   return (
     <div className={styles.main}>
       <Head>
