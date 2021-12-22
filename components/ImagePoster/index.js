@@ -5,7 +5,7 @@ const ImagePoster = ({ id }) => {
   return (
     <div className={styles.imagePoster}>
       {id == 1 && (
-        <Image src={'/new-hope.jpg'} alt="poster 1" width={200} height={300} />
+        <Image src={'/newHope.jpg'} alt="poster 1" width={200} height={300} />
       )}
       {id == 2 && (
         <Image
