@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import ImagePoster from '../../components/ImagePoster';
+import Character from '../../components/Characters';
 import styles from '../../styles/Home.module.scss';
 
 const Details = ({ data }) => {
-  console.log(data.result);
+  //console.log(data.result);
   const res = data.result.properties;
 
   return (
@@ -22,6 +22,12 @@ const Details = ({ data }) => {
         <h2>Director: {res.director}</h2>
         <h2> Release Date: {res.release_date}</h2>
         <h3>Opening Crawl: {res.opening_crawl}</h3>
+        <h2>Characters</h2>
+        <div className={styles.charactersList}>
+          {res?.characters.map((res) => (
+            <Character url={res} key={res} />
+          ))}
+        </div>
       </div>
       <div>
         <button
@@ -43,7 +49,7 @@ export async function getStaticPaths() {
   const movieNumber = await res.json();
 
   // Get the paths we want to pre-render based on movies
-  const paths = movieNumber.result.map((num) => ({
+  const paths = movieNumber?.result?.map((num) => ({
     params: { id: num.uid },
   }));
 

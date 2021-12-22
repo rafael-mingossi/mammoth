@@ -38,6 +38,7 @@ const List = ({ results }) => {
     <div className={styles.movieList}>
       {favourites?.map((favs) => (
         <ListItem
+          href={`movie/${favs.uid}`}
           result={favs}
           key={favs}
           handleFavourite={addFavourite}
