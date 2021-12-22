@@ -34,12 +34,29 @@ const List = ({ results }) => {
     setFavourites(moviesLocalStorage);
   }, []);
 
+  const validateTitle = (favs) => {
+    if (favs == 1) {
+      return 'A New Hope';
+    } else if (favs == 2) {
+      return 'The Empire Strikes Back';
+    } else if (favs == 3) {
+      return 'Return of the Jedi';
+    } else if (favs == 4) {
+      return 'The Phantom Menace';
+    } else if (favs == 5) {
+      return 'Attack of the Clones';
+    } else {
+      return 'Revenge of the Sith';
+    }
+  };
+
   return (
     <div className={styles.movieList}>
       {favourites?.map((favs) => (
         <ListItem
-          href={`movie/${favs.uid}`}
+          href={`movie/${favs}`}
           result={favs}
+          titles={validateTitle(favs)}
           key={favs}
           handleFavourite={addFavourite}
           handleRemoveFavourite={removeFavourite}
@@ -48,11 +65,12 @@ const List = ({ results }) => {
       ))}
       {res?.map(
         (item) =>
-          !favourites.includes(item.properties.title) && (
+          !favourites.includes(item.uid) && (
             <ListItem
               href={`movie/${item.uid}`}
               key={item._id}
-              result={item.properties}
+              result={item}
+              titles={item.properties.title}
               handleFavourite={addFavourite}
               handleRemoveFavourite={removeFavourite}
               handleFavouriteExists={exists}
