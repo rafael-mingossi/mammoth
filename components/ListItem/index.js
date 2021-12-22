@@ -4,15 +4,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function ListItem(props) {
   const { uid } = props.result;
-  const { title } = props.titles;
   const movieId = uid || props.result;
-  const movieTitle = title || props.titles;
 
   return (
     <div className={styles.listItem}>
       <div className={styles.listItemMovie}>
         <a href={props.href}>
-          <h2>{movieTitle}</h2>
+          <h2>{props.titles}</h2>
         </a>
       </div>
 
