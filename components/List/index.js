@@ -65,7 +65,7 @@ const List = ({ results }) => {
       ))}
       {res?.map(
         (item) =>
-          !favourites.includes(item.uid) && (
+          !favourites?.includes(item.uid) && (
             <ListItem
               href={`movie/${item.uid}`}
               key={item._id}
