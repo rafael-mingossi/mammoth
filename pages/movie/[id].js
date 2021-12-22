@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import ImagePoster from '../../components/ImagePoster';
 import Character from '../../components/Characters';
-import styles from '../../styles/Home.module.scss';
+import styles from './styles.module.scss';
 
 const Details = ({ data }) => {
   //console.log(data.result);
@@ -22,7 +22,7 @@ const Details = ({ data }) => {
         <h2>Director: {res.director}</h2>
         <h2> Release Date: {res.release_date}</h2>
         <h3>Opening Crawl: {res.opening_crawl}</h3>
-        <h2>Characters</h2>
+        <h2>Characters:</h2>
         <div className={styles.charactersList}>
           {res?.characters.map((res) => (
             <Character url={res} key={res} />

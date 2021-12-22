@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../styles/Home.module.scss';
+import styles from './styles.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
 

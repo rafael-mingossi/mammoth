@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.scss';
+import styles from './styles.module.scss';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 

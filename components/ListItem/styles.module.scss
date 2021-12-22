@@ -1,0 +1,49 @@
+.listItem {
+  color: white;
+  text-align: center;
+  align-content: center;
+  border: 1px #fff solid;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  min-width: 30%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+
+  transition: all 0.3s ease-in-out;
+
+  position: relative;
+
+  &:hover {
+    background: white;
+    color: #000000;
+  }
+
+  .favIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(
+      -50%
+    ); //reduces the margin of the div to align the icon and movie title
+
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    place-items: center;
+    align-self: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1) translateY(-50%);
+      color: #000000;
+    }
+  }
+
+  .favIconColor {
+    color: rgba(255, 233, 25, 255);
+    transition: all 0.3s ease-in-out;
+  }
+}

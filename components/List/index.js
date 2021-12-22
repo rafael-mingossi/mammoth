@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import ListItem from './ListItem';
-import styles from '../styles/Home.module.scss';
+import ListItem from '../ListItem';
+import styles from './styles.module.scss';
 
 const List = ({ results }) => {
   const [favourites, setFavourites] = useState([]);
