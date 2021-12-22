@@ -10,9 +10,12 @@ function ListItem(props) {
 
   return (
     <div className={styles.listItem}>
-      <a href={props.href}>
-        <h2>{movieTitle}</h2>
-      </a>
+      <div className={styles.listItemMovie}>
+        <a href={props.href}>
+          <h2>{movieTitle}</h2>
+        </a>
+      </div>
+
       <div className={styles.favIcon}>
         {!props.handleFavouriteExists(movieId) ? (
           <FavoriteBorderIcon onClick={() => props.handleFavourite(movieId)} />

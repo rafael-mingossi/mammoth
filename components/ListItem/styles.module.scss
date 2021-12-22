@@ -13,12 +13,15 @@
   padding: 3px 20px;
   width: fit-content;
   transition: all 0.3s ease-in-out;
-
   position: relative;
 
   &:hover {
     background: white;
     color: #000000;
+  }
+
+  .listItemMovie {
+    width: 80%;
   }
 
   .favIcon {
@@ -27,7 +30,6 @@
     transform: translateY(
       -50%
     ); //reduces the margin of the div to align the icon and movie title
-
     right: 10px;
     height: 50px;
     width: 50px;

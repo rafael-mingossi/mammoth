@@ -18,7 +18,7 @@ const Details = ({ data }) => {
       <div className={styles.singleMovieDetails}>
         <h1>Title: {res.title}</h1>
         <h2>Producer: {res.producer}</h2>
-        <h2>Film #: {data.result.uid}</h2>
+        <h2>Film #{data.result.uid}</h2>
         <h2>Director: {res.director}</h2>
         <h2> Release Date: {res.release_date}</h2>
         <h3>Opening Crawl: {res.opening_crawl}</h3>

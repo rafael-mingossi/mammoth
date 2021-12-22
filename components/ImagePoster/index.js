@@ -9,7 +9,7 @@ const ImagePoster = ({ id }) => {
       )}
       {id == 2 && (
         <Image
-          src={'/empire-strikes.jpg'}
+          src={'/empireStrikes.jpg'}
           alt="poster 2"
           width={200}
           height={300}
@@ -17,7 +17,7 @@ const ImagePoster = ({ id }) => {
       )}
       {id == 3 && (
         <Image
-          src={'/return-jedhi.jpg'}
+          src={'/returnJedhi.jpg'}
           alt="poster 3"
           width={200}
           height={300}
@@ -25,7 +25,7 @@ const ImagePoster = ({ id }) => {
       )}
       {id == 4 && (
         <Image
-          src={'/phantom-menance.jpg'}
+          src={'/phantomMenance.jpg'}
           alt="poster 4"
           width={200}
           height={300}
@@ -33,7 +33,7 @@ const ImagePoster = ({ id }) => {
       )}
       {id == 5 && (
         <Image
-          src={'/attack-of-clones.jpg'}
+          src={'/attackOfClones.jpg'}
           alt="poster 5"
           width={200}
           height={300}
@@ -41,7 +41,7 @@ const ImagePoster = ({ id }) => {
       )}
       {id == 6 && (
         <Image
-          src={'/revenge-sith.jpg'}
+          src={'/revengeSith.jpg'}
           alt="poster 6"
           width={200}
           height={300}
