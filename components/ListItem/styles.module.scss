@@ -3,7 +3,7 @@
   text-align: center;
   align-content: center;
   border: 1px #fff solid;
-  height: 80px;
+  height: 85px;
   display: flex;
   justify-content: center;
   min-width: 30%;
@@ -13,7 +13,7 @@
   padding: 3px 20px;
   width: fit-content;
   transition: all 0.3s ease-in-out;
-  position: relative;
+  align-items: center;
 
   &:hover {
     background: white;
@@ -25,23 +25,15 @@
   }
 
   .favIcon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(
-      -50%
-    ); //reduces the margin of the div to align the icon and movie title
-    right: 10px;
-    height: 50px;
-    width: 50px;
     display: flex;
-    place-items: center;
-    align-self: center;
-
+    align-items: center;
+    margin-left: 10px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.3s;
+    padding: 10px;
 
     &:hover {
-      transform: scale(1.1) translateY(-50%);
+      transform: scale(1.3);
       color: #000000;
     }
   }

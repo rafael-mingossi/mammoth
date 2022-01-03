@@ -22,7 +22,6 @@ $accet-color: rgba(255, 233, 25, 255);
     padding: 12px;
     width: 180px;
     outline: none;
-    position: relative;
     border: 1px solid white;
     border-radius: 5px;
     font-size: 18px;
@@ -66,5 +65,12 @@ $accet-color: rgba(255, 233, 25, 255);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  @media (max-width: 600px) {
+    .btnSlide {
+      position: absolute;
+      left: 31%;
+    }
   }
 }
